@@ -26,4 +26,17 @@
 - formatta finalPrice con due decimali
 - stampa finalPrice */ 
 
+let inputEl = document.getElementById("userAge");
+
+let userInput = document.getElementById("userInput")
+
+// funzionamento pulsante
+
+userInput.addEventListener("click", function() {
+     
+     if(inputEl.value > 65) {
+        console.log("ciao")
+     }
+})
+
 

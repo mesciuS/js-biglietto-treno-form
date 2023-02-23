@@ -37,9 +37,12 @@ let userAge = document.getElementById("userAge");
 
 // - il prezzo del biglietto è definito in base ai km (0.21 € al km)
 
-let pricePerKM = 0.21
-let startingPrice = tripKM * pricePerKM
-let finalPrice
+let pricePerKM = 0.21;
+let finalPrice;
+
+// il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo
+
+// finalPrice = finalPrice.toFixed(2); 
 
 // pulsante
 
@@ -49,14 +52,29 @@ let userInput = document.getElementById("userInput")
 
 userInput.addEventListener("click", function() {
 
+    let startingPrice = parseInt(tripKM.value) * pricePerKM
+
     if(userAge.value < 18) {
-        finalPrice = startingPrice - startingPrice * 0.2;
+        finalPrice = startingPrice - startingPrice * 0.2
         console.log(finalPrice);
     }
      
     else if(userAge.value > 65) {
-        console.log("ciao")
+        finalPrice = startingPrice - startingPrice * 0.4
+        console.log(finalPrice)
     }
+
+    else {
+        finalPrice = startingPrice
+        console.log(finalPrice)
+    }
+
+})
+
+userCancel.addEventListener("click", function() {
+
+    document.getElementById("userAge").value = "";
+    document.getElementById("tripKM").value = "";
 })
 
 

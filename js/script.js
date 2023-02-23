@@ -26,17 +26,37 @@
 - formatta finalPrice con due decimali
 - stampa finalPrice */ 
 
-let inputEl = document.getElementById("userAge");
+
+// - Il numero di chilometri da percorrere
+
+let tripKM = document.getElementById("tripKM")
+
+// - Età del passeggero
+
+let userAge = document.getElementById("userAge");
+
+// - il prezzo del biglietto è definito in base ai km (0.21 € al km)
+
+let pricePerKM = 0.21
+let startingPrice = tripKM * pricePerKM
+let finalPrice
+
+// pulsante
 
 let userInput = document.getElementById("userInput")
 
 // funzionamento pulsante
 
 userInput.addEventListener("click", function() {
+
+    if(userAge.value < 18) {
+        finalPrice = startingPrice - startingPrice * 0.2;
+        console.log(finalPrice);
+    }
      
-     if(inputEl.value > 65) {
+    else if(userAge.value > 65) {
         console.log("ciao")
-     }
+    }
 })
 
 
